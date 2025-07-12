@@ -5,10 +5,31 @@ function App() {
   const [submitted, setSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://formspree.io/f/mgvyggny", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -58,11 +79,13 @@ function App() {
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
+            {error && <div className="text-red-500 text-sm text-center">{error}</div>}
             <button
               type="submit"
-              className="mt-2 w-full py-2 rounded-lg bg-gradient-to-r from-blue-900/50 to-purple-900/50 text-blue-400 font-semibold text-lg shadow-lg border border-blue-400 hover:bg-blue-900/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="mt-2 w-full py-2 rounded-lg bg-gradient-to-r from-blue-900/50 to-purple-900/50 text-blue-400 font-semibold text-lg shadow-lg border border-blue-400 hover:bg-blue-900/20 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-60"
+              disabled={loading}
             >
-              Continue
+              {loading ? "Submitting..." : "Continue"}
             </button>
           </form>
         ) : (
