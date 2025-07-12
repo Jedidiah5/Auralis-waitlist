@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "./logo.png";
 
 function App() {
   const [submitted, setSubmitted] = useState(false);
@@ -19,17 +20,15 @@ function App() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center w-full px-4">
-        {/* Logo placeholder */}
+        {/* Logo image */}
         <div className="mb-8 mt-12">
-          <div className="mx-auto h-14 w-14 flex items-center justify-center rounded-full bg-blue-900/20 border-2 border-blue-500 shadow-lg">
-            <span className="text-3xl font-bold text-blue-400">A</span>
-          </div>
+          <img src={logo} alt="Auralis Logo" className="mx-auto h-20 w-20 object-contain" />
         </div>
         <div className="text-center mb-8">
           <div className="uppercase text-xs tracking-widest text-gray-500 mb-2">Auralis Design System</div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
             Join the waitlist for the <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-900/50 bg-clip-text text-transparent">Auralis Design System!</span>
+            <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-purple-900/50 bg-clip-text text-transparent">Auralis Web App</span>
           </h1>
         </div>
         {!submitted ? (
@@ -93,8 +92,8 @@ function App() {
         )}
         {/* Footer */}
         <footer className="mt-16 mb-4 text-center text-xs text-gray-500 z-10">
-          Auralis is coming to Figma soon.<br />
-          Designed by <a href="#" className="underline hover:text-blue-400">yourname</a> to give you back your time.
+          Auralis is coming to the web soon.<br />
+          Designed by <a href="https://enesi-s-space.vercel.app" className="underline hover:text-blue-400">Enesi</a> to give you back your time.
         </footer>
       </div>
     </div>
