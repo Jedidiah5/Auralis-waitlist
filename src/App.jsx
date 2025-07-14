@@ -58,7 +58,7 @@ function App() {
             className="w-full max-w-md bg-gray-800/90 rounded-xl shadow-xl p-6 flex flex-col gap-4 border border-gray-700"
           >
             <div className="flex items-center bg-gray-900 rounded-lg px-3 py-2 border border-gray-700 focus-within:border-blue-500 transition">
-              <svg className="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              <ion-icon name="person-outline" class="w-5 h-5 text-gray-500 mr-2"></ion-icon>
               <input
                 type="text"
                 required
@@ -69,7 +69,7 @@ function App() {
               />
             </div>
             <div className="flex items-center bg-gray-900 rounded-lg px-3 py-2 border border-gray-700 focus-within:border-blue-500 transition">
-              <svg className="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm0 0v1a4 4 0 01-8 0v-1" /></svg>
+              <ion-icon name="mail-outline" class="w-5 h-5 text-gray-500 mr-2"></ion-icon>
               <input
                 type="email"
                 required
@@ -107,7 +107,7 @@ function App() {
               <h2 className="text-2xl font-bold text-white mb-2">We've added you to our waiting list!</h2>
               <p className="text-gray-400 mb-4">We'll let you know when Auralis is ready.</p>
               <div className="flex items-center justify-center bg-blue-900/20 rounded-lg px-3 py-2 mb-2 border border-blue-400">
-                <svg className="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0zm0 0v1a4 4 0 01-8 0v-1" /></svg>
+                <ion-icon name="mail-outline" class="w-5 h-5 text-blue-400 mr-2"></ion-icon>
                 <span className="text-blue-400 font-mono text-sm">{email}</span>
               </div>
             </div>
